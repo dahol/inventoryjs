@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build artifacts
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Environment variables
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
