@@ -23,8 +23,8 @@ function App() {
         <Routes>
 
           <Route path="/" exact element={ <Dashboard/> } />
-          <Route path="/items" element={ <Tickets/> } />
-          <Route path="/items/:id" element={ <TicketDetail/> } />
+          <Route path="/items" element={ <Items/> } />
+          <Route path="/items/:id" element={ <ItemDetail/> } />
           
         </Routes>
 
