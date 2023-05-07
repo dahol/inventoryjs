@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
-const port = process.env.PORT || 3000;
+const port = process.env.APPPORT || 3000;
 
 // Create an instance of the Express application
 const app = express();
@@ -12,11 +12,11 @@ app.use(bodyParser.json());
 
 // PostgreSQL connection pool
 const pool = new Pool({
-  user: process.env.user || 'your-username',
-  password: process.env.password || 'your-password',
-  host: process.env.host || 'localhost',
-  port: process.env.port || 5432,
-  database: process.env.database || 'your-database-name'
+  user: process.env.PGUSER || 'your-username',
+  password: process.env.PGPASSWORD || 'your-password',
+  host: process.env.PGHOST || 'localhost',
+  port: process.env.PGPORT || 5432,
+  database: process.env.PGDATABASE || 'your-database-name'
 });
 
 // Routes
@@ -79,7 +79,7 @@ app.put('/items/:id', async (req, res) => {
   }
 });
 
-// Delete a item
+// Delete an item
 app.delete('/items/:id', async (req, res) => {
   const itemId = req.params.id;
   try {
