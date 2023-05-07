@@ -1,13 +1,25 @@
-# Stage 1 - Build
-FROM node:14.16.0-alpine as build
+FROM node:16.15.1
+
+# for caching optimisations
+COPY package*.json /
+RUN npm install
+# required to serve the react app on the live server
+RUN npm install -g serve
+
+COPY . /app
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci --production
-COPY . .
+
+# noop files for non python projects and local development
+#RUN echo "#!/bin/bash" > /app/migrate.sh && chmod +x /app/migrate.sh
+#RUN echo "#!/bin/bash" > /usr/local/bin/start && chmod +x /usr/local/bin/start
+#
+#ENV PATH=/node_modules/.bin:$PATH
+#ENV PORT=80
+#ENV HOST=0.0.0.0
+#ENV BROWSER='none'
+
 RUN npm run build
 
-# Stage 2 - Production
-FROM nginx:1.21.0-alpine
-COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["serve", "-s", "build", "-l", "80"]
