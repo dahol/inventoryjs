@@ -29,6 +29,7 @@ function Items() {
   return (
     <div className="container pt-3">
       <div className="row d-flex">
+        ITEMS
         <div className="col d-flex justify-content-center">
           <i className="bi bi-filter"></i>
         </div>
