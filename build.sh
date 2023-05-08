@@ -11,12 +11,12 @@ done
 
 # Build
 
-if [ "$build" = true ] ; then
+if [ "$build" = "true" ] ; then
     echo "Building.."
-    sudo docker build backend/ -t dahol/inventoryjs-backend
-    sudo docker build frontend/ -t dahol/inventoryjs-frontend
+    sudo docker build backend/ -t dahol/inventoryjsbackend
+    sudo docker build frontend/ -t dahol/inventoryjsfrontend
     echo "Done building!"
-else
+elif [ "$build" = "false" ] ; then
     echo "Skipping build.."
 fi
 
@@ -24,9 +24,9 @@ fi
 
 if [ "$push" = "true" ] ; then
     echo "Pushing.."
-    sudo docker push dahol/inventoryjs-backend
-    sudo docker push dahol/inventoryjs-frontend
+    sudo docker push dahol/inventoryjsbackend
+    sudo docker push dahol/inventoryjsfrontend
     echo "Done pushing!"
-else
+elif [ "$push" = "false" ] ; then
     echo "Skipping push.."
 fi
