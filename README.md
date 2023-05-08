@@ -9,7 +9,7 @@
     - Arguments:
       - `-b true` to build
       - `-p true` to push
-      - ex: `./build.sh -b=true -p=true`
+      - ex: `./build.sh -b true -p true`
 
   - Deploy.sh
 
