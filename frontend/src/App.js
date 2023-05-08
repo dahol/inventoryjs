@@ -1,10 +1,13 @@
 import Header from './components/Header'
-import Items from './Items'
+
 import Dashboard from './Dashboard'
+import Items from './Items'
 import ItemDetail from './ItemDetail'
+import Tasks from './Tasks'
+import TaskDetail from './TaskDetail'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-export const backendApiMain = 'http://backend-service:3000'
+export const backendApiMain = 'http://backend'
 
 
 
@@ -25,6 +28,8 @@ function App() {
           <Route path="/" exact element={ <Dashboard/> } />
           <Route path="/items" element={ <Items/> } />
           <Route path="/items/:id" element={ <ItemDetail/> } />
+          <Route path="/tasks" element={ <Tasks/> } />
+          <Route path="/tasks/:id" element={ <TaskDetail/> } />
           
         </Routes>
 
