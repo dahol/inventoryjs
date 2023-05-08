@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
+  name: backend
 spec:
   replicas: 1
   selector:
@@ -32,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: backend
 spec:
   selector:
     app: backend
@@ -41,15 +41,3 @@ spec:
       port: 80
       targetPort: 3000
   type: LoadBalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-backend-service
-spec:
-  selector:
-    app: backend
-  ports:
-    - protocol: TCP
-      port: 80
-  type: ClusterIP
