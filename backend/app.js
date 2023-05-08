@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
+require('dotenv').config();
 const port = process.env.APPPORT || 3000;
 
 // Create an instance of the Express application
@@ -9,6 +10,9 @@ const app = express();
 
 // Set up middleware
 app.use(bodyParser.json());
+
+// test env vars
+//console.log(process.env);
 
 // PostgreSQL connection pool
 const pool = new Pool({
