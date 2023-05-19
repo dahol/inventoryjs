@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dahol/frontend:latest
+          image: dahol/frontend
           ports:
             - containerPort: 80
       imagePullPolicy: Always
