@@ -17,3 +17,4 @@ spec:
           image: dahol/inventoryjsfrontend:latest
           ports:
             - containerPort: 80
+      imagePullPolicy: Always
