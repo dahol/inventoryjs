@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dahol/inventoryjsfrontend:latest
+          image: dahol/frontend:latest
           ports:
             - containerPort: 80
       imagePullPolicy: Always
