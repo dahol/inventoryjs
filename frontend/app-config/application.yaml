@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dahol/inventoryjs
     targetRevision: main
-    path: dev
+    path: frontend/app-config/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: inventoryjs-frontend
