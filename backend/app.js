@@ -44,7 +44,7 @@ app.get('/items/:id', async (req, res) => {
     const queryResult = await pool.query('SELECT * FROM items WHERE id = $1', [itemId]);
     const item = queryResult.rows[0];
     if (!item) {
-      res.status(404).send('Book not found');
+      res.status(404).send('Item not found');
     } else {
       res.json(item);
     }
@@ -59,7 +59,7 @@ app.post('/items', async (req, res) => {
   const { title, author } = req.body;
   try {
     await pool.query('INSERT INTO items (title, author) VALUES ($1, $2)', [title, author]);
-    res.status(201).send('Book created successfully');
+    res.status(201).send('Item created successfully');
   } catch (error) {
     console.error('Failed to create the item:', error);
     res.status(500).send('Internal Server Error');
@@ -73,9 +73,9 @@ app.put('/items/:id', async (req, res) => {
   try {
     const queryResult = await pool.query('UPDATE items SET title = $1, author = $2 WHERE id = $3', [title, author, itemId]);
     if (queryResult.rowCount === 0) {
-      res.status(404).send('Book not found');
+      res.status(404).send('Item not found');
     } else {
-      res.status(200).send('Book updated successfully');
+      res.status(200).send('Item updated successfully');
     }
   } catch (error) {
     console.error('Failed to update the item:', error);
@@ -89,9 +89,9 @@ app.delete('/items/:id', async (req, res) => {
   try {
     const queryResult = await pool.query('DELETE FROM items WHERE id = $1', [itemId]);
     if (queryResult.rowCount === 0) {
-      res.status(404).send('Book not found');
+      res.status(404).send('Item not found');
     } else {
-      res.status(200).send('Book deleted successfully');
+      res.status(200).send('Item deleted successfully');
     }
   } catch (error) {
     console.error('Failed to delete the item:', error);
