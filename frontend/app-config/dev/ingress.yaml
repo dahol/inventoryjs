@@ -7,10 +7,10 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   ingressClassName: nginx
-  #tls:
-  #  - hosts:
-  #      - findmyapp.net
-  #    secretName: inventoryjs-certificate-secret
+  tls:
+    - hosts:
+        - findmyapp.net
+      secretName: inventoryjs-certificate-secret
   rules:
     - http:
         paths:

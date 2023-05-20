@@ -4,7 +4,7 @@ metadata:
   name: inventoryjs-frontend
   namespace: argocd
 spec:
-  project: inventoryjs-frontend
+  project: inventoryjs
   source:
     repoURL: https://github.com/dahol/inventoryjs
     targetRevision: main
