@@ -6,10 +6,10 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
-  #tls:
-  #  - hosts:
-  #      - findmyapp.net
-  #    secretName: inventoryjs-certificate-secret
+  tls:
+    - hosts:
+        - findmyapp.net
+      secretName: inventoryjs-certificate-secret-tls
   rules:
     - host: "findmyapp.net"
       http:
