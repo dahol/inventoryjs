@@ -1,5 +1,5 @@
 import Header from './components/Header'
-
+import { backendApiMain } from './shared'
 import Dashboard from './Dashboard'
 import Items from './Items'
 import ItemDetail from './ItemDetail'
@@ -7,7 +7,6 @@ import Tasks from './Tasks'
 import TaskDetail from './TaskDetail'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-export const backendApiMain = 'http://backend'
 
 
 

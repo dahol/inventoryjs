@@ -1,13 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { backendApiMain } from "./App";
+import { useParams } from "react-router-dom";
+import { backendApiMain } from '../shared'
+
 
 function ItemDetail({ match }) {
 
   useEffect(() => {
-    fetchItem();
+    const { id } = useParams();
+    const [item, setItem] = useState({});
+    const [tempItem, setTempItem] = useState({});
+    const [notFound, setNotFound] = useState();
+    useEffect(() => {
+      const url = backendApiMain+`/item/${match.params.id}`;
+      fetch(url)
+        .then((res) => {
+          if (res.status === 404) {
+            setNotFound(true);
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setItem(data);
+          setTempItem(data);
+        });    
   }, []);
 
-  const [item, setItem] = useState({});
+  // const [item, setItem] = useState({});
+  // const [tempItem, setTempItem] = useState({});
 
   const fetchItem = async () => {
     const fetchItem = await fetch(backendApiMain+`/item/${match.params.id}`)
@@ -76,6 +95,7 @@ function ItemDetail({ match }) {
 
     </div >
   );
+}, []);
 }
 
 export default ItemDetail;
