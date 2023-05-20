@@ -2,10 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-service
+  namespace: inventoryjs-frontend
 spec:
   selector:
     app: frontend
   ports:
     - protocol: TCP
       port: 80
+      targetPort: 3000
   type: LoadBalancer

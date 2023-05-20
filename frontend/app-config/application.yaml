@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: frontend
+  name: inventoryjs-frontend
   namespace: argocd
 spec:
-  project: default
+  project: inventoryjs-frontend
   source:
     repoURL: https://github.com/dahol/inventoryjs
     targetRevision: main

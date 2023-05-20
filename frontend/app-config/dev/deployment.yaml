@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  namespace: inventoryjs-frontend
 spec:
   replicas: 1
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dahol/frontend
+          image: dahol/reactfrontend
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
-      imagePullPolicy: ifNotPresent
+            - containerPort: 3000
