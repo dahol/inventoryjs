@@ -11,7 +11,8 @@ spec:
   #      - findmyapp.net
   #    secretName: inventoryjs-certificate-secret
   rules:
-    - http:
+    - host: "findmyapp.net"
+      http:
         paths:
           - path: /
             pathType: Prefix
