@@ -7,11 +7,15 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   tls:
-    - hosts:
-        - findmyapp.net
-      secretName: findmyapp-net-staging-tls
+    - host:
+      - inventory.findmyapp.net
+      secretName: inventory-findmyapp-staging-tls
+  #  tls:
+  #  - hosts:
+  #      - inventory.findmyapp.net
+  #    secretName: findmyapp-net-staging-tls
   rules:
-    - host: "findmyapp.net"
+    - host: "inventory.findmyapp.net"
       http:
         paths:
           - path: /
