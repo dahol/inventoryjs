@@ -8,7 +8,7 @@ metadata:
 spec:
   tls:
     - hosts:
-        - findmyapp.net
+        - "findmyapp.net"
       secretName: findmyapp-net-staging-tls
   rules:
     - host: "findmyapp.net"
