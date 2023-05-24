@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "findmyapp.net"
+        - "inventory.findmyapp.net"
       secretName: findmyapp-net-staging-tls
   rules:
-    - host: "inventory2.findmyapp.net"
+    - host: "inventory.findmyapp.net"
       http:
         paths:
           - path: /
