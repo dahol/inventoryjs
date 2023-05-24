@@ -11,7 +11,7 @@ spec:
         - "findmyapp.net"
       secretName: findmyapp-net-staging-tls
   rules:
-    - host: "findmyapp.net"
+    - host: "inventory2.findmyapp.net"
       http:
         paths:
           - path: /
