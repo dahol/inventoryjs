@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: inventoryjs-backend
+  namespace: argocd
+spec:
+  project: inventoryjs
+  source:
+    repoURL: https://github.com/dahol/inventoryjs
+    targetRevision: main
+    path: backend/app-config/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: inventoryjs-backend
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
