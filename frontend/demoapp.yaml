@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:latest
+          image: dahol/frontend
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -45,7 +45,7 @@ spec:
   tls:
     - hosts:
         - "nginx.findmyapp.net"
-      secretName: nginx-findmyapp-net-staging-tls
+      secretName: nginx-findmyapp-net-staging-new-tls
   rules:
     - host: "nginx.findmyapp.net"
       http:
