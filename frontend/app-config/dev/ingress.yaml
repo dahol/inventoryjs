@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - "inventory.findmyapp.net"
-      secretName: findmyapp-net-staging-tls
+      secretName: inventory-findmyapp-net-staging-new-tls
   rules:
     - host: "inventory.findmyapp.net"
       http:
