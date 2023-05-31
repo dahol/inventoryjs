@@ -6,10 +6,10 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
-  tls:
-    - hosts:
-        - "inventory.findmyapp.net"
-      secretName: inventory-findmyapp-net-staging-new-tls
+  #tls:
+  #  - hosts:
+  #      - "inventory.findmyapp.net"
+  #    secretName: inventory-findmyapp-net-staging-new-tls
   rules:
     - host: "inventory.findmyapp.net"
       http:
