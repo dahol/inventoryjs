@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
-import { backendApiMain } from "./App";
+import { backendApiMain } from './shared'
 
 function Tasks() {
 

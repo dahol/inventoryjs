@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { backendApiMain } from "./App";
+import { backendApiMain } from './shared'
 
 function TaskDetail({ match }) {
 
